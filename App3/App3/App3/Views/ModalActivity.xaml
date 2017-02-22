@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="todolist.Views.ModalActivity">
+  <!-- ContentPage.Content>
+    <StackLayout HorizontalOptions="Center">
+      <Label FontSize="25" VerticalTextAlignment="Start" HorizontalTextAlignment="Center" x:Name="_title" />
+      <Label FontSize="15" HorizontalTextAlignment="Center" x:Name="_date" />
+      <Label FontSize="20" HorizontalTextAlignment="Center" x:Name="_content" />
+      <Label FontSize="15" HorizontalTextAlignment="Center" x:Name="_state" />
+      <Button Text="Fechar"  Clicked="ButtonCloseModal_OnClicked" />
+    </StackLayout>
+  </ContentPage.Content> -->
+</ContentPage >

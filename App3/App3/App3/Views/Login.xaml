@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="todolist.Login" Title="Login">
+       <ContentPage.Content>
+		    <StackLayout VerticalOptions="StartAndExpand" Padding="20" Spacing="20">
+          <Label Text="E-mail" />
+			    <Entry x:Name="_email" Text="" Placeholder="user@mail.com" Keyboard="Email" />
+			
+          <Label Text="Senha" />
+			    <Entry x:Name="_password" Text="" IsPassword="true" Placeholder="*****"/>
+			
+          <Button Text="Login" x:Name="Teste" Clicked="OnLoginButtonClicked" />
+		    </StackLayout>
+	  </ContentPage.Content>
+</ContentPage>

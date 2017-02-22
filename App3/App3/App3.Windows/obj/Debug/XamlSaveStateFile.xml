@@ -1,0 +1,13 @@
+<XamlCompilerSaveState>
+  <ReferenceAssemblyList>
+    <LocalAssembly PathName="c:\users\mathe\desktop\app3\app3\app3.windows\obj\debug\intermediatexaml\app3.windows.exe" HashGuid="395d7c09-6ffe-dd62-caa6-d1913c5ee234" />
+    <ReferenceAssembly PathName="c:\users\mathe\desktop\app3\app3\app3\bin\debug\app3.dll" HashGuid="70e6fa0c-01d9-a26e-0c96-ba8ca943a904" />
+    <ReferenceAssembly PathName="c:\users\mathe\desktop\app3\packages\sqlite.net.core-pcl.3.1.1\lib\portable-win8+net45+wp8+wpa81+monoandroid1+monotouch1\sqlite.net.dll" HashGuid="2223cbf7-68d4-e5e4-e5e4-a19696ad83b6" />
+    <ReferenceAssembly PathName="c:\users\mathe\desktop\app3\packages\sqlite.net-pcl.3.1.1\lib\windows8\sqlite.net.platform.winrt.dll" HashGuid="1bc7eaa0-e36a-f105-20d8-c57b14216cea" />
+    <ReferenceAssembly PathName="c:\users\mathe\desktop\app3\packages\xamarin.forms.2.3.3.180\lib\win81\xamarin.forms.core.dll" HashGuid="c782f70f-077f-7e2d-5bd4-f6b5da067f8a" />
+    <ReferenceAssembly PathName="c:\users\mathe\desktop\app3\packages\xamarin.forms.2.3.3.180\lib\win81\xamarin.forms.platform.dll" HashGuid="6b938cd4-44c0-2618-7eb6-4caa3f482076" />
+    <ReferenceAssembly PathName="c:\users\mathe\desktop\app3\packages\xamarin.forms.2.3.3.180\lib\win81\xamarin.forms.platform.winrt.dll" HashGuid="fe4acc44-27ba-0e4e-a08b-26ae7dccb678" />
+    <ReferenceAssembly PathName="c:\users\mathe\desktop\app3\packages\xamarin.forms.2.3.3.180\lib\win81\xamarin.forms.platform.winrt.tablet.dll" HashGuid="6cda1a83-1d8e-d2d4-211d-d5f3a06554ab" />
+    <ReferenceAssembly PathName="c:\users\mathe\desktop\app3\packages\xamarin.forms.2.3.3.180\lib\win81\xamarin.forms.xaml.dll" HashGuid="964969a0-caee-7d9d-82cd-9d1d01056ded" />
+  </ReferenceAssemblyList>
+</XamlCompilerSaveState>
