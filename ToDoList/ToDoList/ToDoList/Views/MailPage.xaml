@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoList.Views.MailPage"
+             xmlns:vm="clr-namespace:ToDoList.ViewModels;"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:MailViewModel />
+    </ContentPage.BindingContext>
+    <StackLayout Spacing="20" Padding="15" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <Label Text="Email" FontSize="Medium" />
+            <Entry x:Name="_email" Keyboard="Email" FontSize="Small" />
+            <Label Text="Hour" FontSize="Medium" />
+        <TimePicker x:Name="_hour" Format = "HH:mm"/>
+            <Button Text="Save" Clicked="Save_Clicked"/>
+    </StackLayout>
+</ContentPage>

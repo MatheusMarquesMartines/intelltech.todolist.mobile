@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ToDoList.Views.NewActivity"
+		Title="New Activity">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Save" Clicked="Save_Clicked" />
+	</ContentPage.ToolbarItems>
+	<ContentPage.Content>
+		<StackLayout Spacing="20" Padding="15">
+			<Label Text="Title" FontSize="Medium" />
+			<Entry Text="{Binding Activity.titulo}" FontSize="Small" />
+			<Label Text="Content" FontSize="Medium" />
+			<Editor Text="{Binding Activity.descricao }" FontSize="Small" Margin="0" />
+            <Label Text="Date" FontSize="Medium" />
+            <DatePicker x:Name="date" Format="dd/MM/yyyy"/>
+            <Label Text="Hour" FontSize="Medium" />
+            <TimePicker x:Name="hour" Format="HH:mm"/>
+            
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>
