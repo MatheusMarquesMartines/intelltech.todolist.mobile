@@ -4,28 +4,34 @@
              x:Class="ToDoList.Views.SyncPage"
               Title="{Binding Title}"
              x:Name="SyncItemsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Clicked="Sync_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <OnPlatform.Android>sync.png</OnPlatform.Android>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-
-            <Button Text="Synchronize" Clicked="Sync_Clicked" />
-
             <ListView x:Name="SyncListView"
-				ItemsSource="{Binding Activities}"
+				ItemsSource="{Binding ActivitiesSync}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"
-                RefreshCommand="{Binding LoadItemsCommand}"
+                RefreshCommand="{Binding LoadItemsCommandSync}"
                 IsPullToRefreshEnabled="true"
-                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                IsRefreshing="{Binding IsBusySync, Mode=OneWay}"
                 CachingStrategy="RecycleElement">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10">
-                                <Label Text="{Binding titulo}"
+                                <Label Text="{Binding Titulo}"
                        LineBreakMode="NoWrap"
                        Style="{DynamicResource ListItemTextStyle}"
                        FontSize="16"/>
-                                <Label Text="{Binding dataHora}"
+                                <Label Text="{Binding DataHora}"
                        LineBreakMode="NoWrap"
                        Style="{DynamicResource ListItemDetailTextStyle}"
                        FontSize="13"/>
@@ -34,6 +40,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Label x:Name="avisos" Text="Atividades sincronizadas!" IsVisible="False" HorizontalTextAlignment="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

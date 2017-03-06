@@ -11,28 +11,28 @@ namespace ToDoList.ViewModels
 {
     class SyncViewModel : BaseViewModel
     {
-        public ObservableRangeCollection<Activity> Activities { get; set; }
-        public Command LoadItemsCommand { get; set; }
+        public ObservableRangeCollection<Activity> ActivitiesSync { get; set; }
+        public Command LoadItemsCommandSync { get; set; }
 
         public SyncViewModel()
         {
             Title = "ToDoList";
-            Activities = new ObservableRangeCollection<Activity>();
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            ActivitiesSync = new ObservableRangeCollection<Activity>();
+            LoadItemsCommandSync = new Command(async () => await ExecuteLoadItemsCommandSync());
         }
 
-        async Task ExecuteLoadItemsCommand()
+        async Task ExecuteLoadItemsCommandSync()
         {
-            if (IsBusy)
+            if (IsBusySync)
                 return;
 
-            IsBusy = true;
+            IsBusySync = true;
 
             try
             {
-                Activities.Clear();
+                ActivitiesSync.Clear();
                 var activities = await DataStore.GetItemsAsyncCompare(true);
-                Activities.ReplaceRange(activities);
+                ActivitiesSync.ReplaceRange(activities);
             }
             catch (Exception ex)
             {
@@ -45,7 +45,7 @@ namespace ToDoList.ViewModels
             }
             finally
             {
-                IsBusy = false;
+                IsBusySync = false;
             }
         }
 
@@ -53,10 +53,10 @@ namespace ToDoList.ViewModels
         {
             try
             {
-                Activities.Clear();
+                ActivitiesSync.Clear();
                 await DataStore.Synchronize();
                 var activities = await DataStore.GetItemsAsyncCompare(true);
-                Activities.ReplaceRange(activities);
+                ActivitiesSync.ReplaceRange(activities);
             }
             catch (Exception ex)
             {
@@ -69,7 +69,7 @@ namespace ToDoList.ViewModels
             }
             finally
             {
-                IsBusy = false;
+                IsBusySync = false;
             }
         }
     }

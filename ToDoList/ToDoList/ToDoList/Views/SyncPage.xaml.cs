@@ -18,19 +18,39 @@ namespace ToDoList.Views
         {
             InitializeComponent();
             BindingContext = viewModel = new SyncViewModel();
+            validate();
+
+            SyncListView.SelectedItem = null;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
+           
+            if (viewModel.ActivitiesSync.Count == 0)
+                viewModel.LoadItemsCommandSync.Execute(null);
 
-            if (viewModel.Activities.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
+            validate();
+
         }
 
         public async void Sync_Clicked(object sender, EventArgs e)
         {
             await viewModel.Sync();
+
+            validate();
+        }
+
+        private void validate()
+        {
+            if (viewModel.ActivitiesSync.Count != 0)
+            {
+                avisos.IsVisible = false;
+            }
+            else
+            {
+                avisos.IsVisible = true;
+            }
         }
     }
 }

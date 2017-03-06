@@ -11,7 +11,7 @@ namespace ToDoList.ViewModels
         ActivityViewModel ivm = new ActivityViewModel();
         public ActivityDetailViewModel(Activity activity = null)
         {
-            Title = activity.titulo;
+            Title = activity.Titulo;
             Activity = activity;
         }
 

@@ -14,7 +14,7 @@ namespace ToDoList.Services
         public AccessDB()
         {
             var config = DependencyService.Get<IConfig>();
-            connectionSQLite = new SQLiteConnection(config.Platform, Path.Combine(config.DirSQLite, "todolist2.db3"));
+            connectionSQLite = new SQLiteConnection(config.Platform, Path.Combine(config.DirSQLite, "todolist3.db3"));
             connectionSQLite.CreateTable<Activity>();
         }
 

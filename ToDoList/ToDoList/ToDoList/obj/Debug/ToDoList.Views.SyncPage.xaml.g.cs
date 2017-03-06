@@ -20,9 +20,13 @@ namespace ToDoList.Views {
         private global::Xamarin.Forms.ListView SyncListView;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label avisos;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(SyncPage));
             SyncListView = this.FindByName<global::Xamarin.Forms.ListView>("SyncListView");
+            avisos = this.FindByName<global::Xamarin.Forms.Label>("avisos");
         }
     }
 }

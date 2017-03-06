@@ -14,21 +14,22 @@ namespace ToDoList.Views
         public ActivityPage()
         {
             InitializeComponent();
-            var image = new Image();
-
+            
             BindingContext = viewModel = new ActivityViewModel();
 
-            image.Source = string.Format("{0}{1}.png", Device.OnPlatform("Icons/", "", "Assets/Icons"), "ic_add.png");
-            //toolbar.Icon =  "ic_add.png";
+            validate();
+
         }
-        
+
         public void OnDelete(object sender, EventArgs e)
         {
             var mi = ((MenuItem)sender);
             viewModel.DeleteActivity(mi.CommandParameter);
+            validate();
+
             //DisplayAlert("Delete Context Action", mi.CommandParameter + " delete context action", "OK");
         }
-        
+
 
         async void OnItemTapped(object sender, ItemTappedEventArgs args)
         {
@@ -40,6 +41,8 @@ namespace ToDoList.Views
 
             // Manually deselect item
             ItemsListView.SelectedItem = null;
+            
+            
         }
 
         async void AddItem_Clicked(object sender, EventArgs e)
@@ -47,12 +50,28 @@ namespace ToDoList.Views
             await Navigation.PushAsync(new NewActivity());
         }
 
-        protected override void OnAppearing()
+       protected override void OnAppearing()
         {
             base.OnAppearing();
 
             if (viewModel.Activities.Count == 0)
+            {
                 viewModel.LoadItemsCommand.Execute(null);
+            }
+
+            validate();
+            
+        }
+
+        private void validate() {
+            if (viewModel.Activities.Count != 0)
+            {
+                aviso.IsVisible = false;
+            }
+            else
+            {
+                aviso.IsVisible = true;
+            }
         }
     }
 }

@@ -16,7 +16,9 @@ namespace ToDoList.Services
     {
         bool isInitialized;
         bool verifica;
+        List<Activity> SortedList;
         List<Activity> activities;
+        List<Activity> activities2;
         private AccessDB db;
         private RestClient _client;
         public async Task<bool> AddItemAsync(Activity a)
@@ -61,7 +63,7 @@ namespace ToDoList.Services
         {
             await InitializeAsync();
 
-            return await Task.FromResult(activities);
+            return await Task.FromResult(SortedList);
         }
 
         public Task<bool> PullLatestAsync()
@@ -77,6 +79,7 @@ namespace ToDoList.Services
 
         public async Task InitializeAsync()
         {
+            isInitialized = false;
             db = new AccessDB();
 
             _client = new RestClient();
@@ -90,6 +93,8 @@ namespace ToDoList.Services
             var resultLocal = db.GetActivities();
             foreach (var item2 in resultLocal)
             {
+               DateTime dt = Convert.ToDateTime(item2.DataHora);
+               item2.DataHora = dt.ToString("G");
                 activities.Add(item2);
             }
 
@@ -100,7 +105,9 @@ namespace ToDoList.Services
 
                 for (int i=0; i< resultLocal.Count; i++)
                 {
-                    if (resultLocal.ElementAt(i).titulo.Equals(item.titulo) && resultLocal.ElementAt(i).dataHora.Equals(item.dataHora))
+                    DateTime dt = Convert.ToDateTime(item.DataHora);
+                    item.DataHora = dt.ToString("G");
+                    if (resultLocal.ElementAt(i).Titulo.Equals(item.Titulo) && resultLocal.ElementAt(i).DataHora.Substring(0, 19).Equals(item.DataHora.Substring(0,19)))
                     {
                         verifica = true;
                     }
@@ -108,11 +115,13 @@ namespace ToDoList.Services
 
                 if (verifica == false)
                 {
-                    activities.Add(item);
+                  
+                   activities.Add(item);
                 }
                 
             }
-            
+
+            SortedList = activities.OrderBy(o => o.DataHora).ToList();
 
             isInitialized = true;
         }
@@ -121,19 +130,19 @@ namespace ToDoList.Services
         {
             db = new AccessDB();
             _client = new RestClient();
-            activities = new List<Activity>();
+            activities2 = new List<Activity>();
 
             var resultServer = await _client.GetActivities();
             var resultLocal = db.GetActivities();
             bool verifica;
-            activities.Clear();
+            activities2.Clear();
 
                 for (int i = 0; i < resultLocal.Count; i++)
                 {
                     verifica = false;
                     for (int j = 0; j < resultServer.Count(); j++)
                     {
-                        if(resultLocal.ElementAt(i).titulo.Equals(resultServer.ElementAt(j).titulo) && resultLocal.ElementAt(i).titulo.Equals(resultServer.ElementAt(j).titulo))
+                        if(resultLocal.ElementAt(i).Titulo.Equals(resultServer.ElementAt(j).Titulo) && resultLocal.ElementAt(i).DataHora.Substring(0, 19).Equals(resultServer.ElementAt(j).DataHora.Substring(0, 19)))
                         {
                             verifica = true;
                         }
@@ -141,7 +150,8 @@ namespace ToDoList.Services
 
                     if (verifica == false)
                     {
-                        activities.Add(resultLocal.ElementAt(i));
+                  
+                    activities2.Add(resultLocal.ElementAt(i));
                     }
                 }
 
@@ -150,7 +160,8 @@ namespace ToDoList.Services
                     verifica = false;
                     for (int j = 0; j < resultLocal.Count; j++)
                     {
-                        if (resultServer.ElementAt(i).titulo.Equals(resultLocal.ElementAt(j).titulo) && resultServer.ElementAt(i).titulo.Equals(resultLocal.ElementAt(j).titulo))
+                    
+                    if (resultServer.ElementAt(i).Titulo.Equals(resultLocal.ElementAt(j).Titulo) && resultServer.ElementAt(i).DataHora.Substring(0, 19).Equals(resultLocal.ElementAt(j).DataHora.Substring(0, 19)))
                         {
                             verifica = true;
                         }
@@ -158,11 +169,21 @@ namespace ToDoList.Services
 
                     if (verifica == false)
                     {
-                        activities.Add(resultServer.ElementAt(i));
+                  
+                    activities2.Add(resultServer.ElementAt(i));
                     }
                 }
+             formatDate(activities2);
+            return await Task.FromResult(activities2);
+        }
 
-            return await Task.FromResult(activities);
+        private void formatDate(List<Activity> activities2)
+        {
+            foreach (var item in activities2)
+            {
+                DateTime dt = Convert.ToDateTime(item.DataHora);
+                item.DataHora = dt.ToString("G");
+            }
         }
 
         public async Task Synchronize()
@@ -173,14 +194,14 @@ namespace ToDoList.Services
             var resultServer = await _client.GetActivities();
             var resultLocal = db.GetActivities();
             bool verifica;
-            activities = new List<Activity>();
+            activities2 = new List<Activity>();
 
             for (int i = 0; i < resultLocal.Count; i++)
             {
                 verifica = false;
                 for (int j = 0; j < resultServer.Count(); j++)
                 {
-                    if (resultLocal.ElementAt(i).titulo.Equals(resultServer.ElementAt(j).titulo) && resultLocal.ElementAt(i).dataHora.Equals(resultServer.ElementAt(j).dataHora))
+                    if (resultLocal.ElementAt(i).Titulo.Equals(resultServer.ElementAt(j).Titulo) && resultLocal.ElementAt(i).DataHora.Substring(0, 19).Equals(resultServer.ElementAt(j).DataHora.Substring(0, 19)))
                     {
                         verifica = true;
                     }
@@ -188,18 +209,28 @@ namespace ToDoList.Services
 
                 if (verifica == false)
                 {
-                    activities.Add(resultLocal.ElementAt(i));
+                    if (resultLocal.ElementAt(i).Synchronized != true)
+                    {
+                        resultLocal.ElementAt(i).Synchronized = true;
+                        db.UpdateActivity(resultLocal.ElementAt(i));
+                        activities2.Add(resultLocal.ElementAt(i));
+                    }
+                    else
+                    {
+                        db.DeleteActivity(resultLocal.ElementAt(i));
+                    }
+
                 }
             }
 
-            _client.SendActivity(activities);
+            _client.SendActivity(activities2);
 
             for (int i = 0; i < resultServer.Count(); i++)
             {
                 verifica = false;
                 for (int j = 0; j < resultLocal.Count; j++)
                 {
-                    if (resultServer.ElementAt(i).titulo.Equals(resultLocal.ElementAt(j).titulo) && resultServer.ElementAt(i).dataHora.Equals(resultLocal.ElementAt(j).dataHora))
+                    if (resultServer.ElementAt(i).Titulo.Equals(resultLocal.ElementAt(j).Titulo) && resultServer.ElementAt(i).DataHora.Substring(0, 19).Equals(resultLocal.ElementAt(j).DataHora.Substring(0, 19)))
                     {
                         verifica = true;
                     }
@@ -207,9 +238,12 @@ namespace ToDoList.Services
 
                 if (verifica == false)
                 {
+                    resultServer.ElementAt(i).Synchronized = true;
                     db.InsertActivity(resultServer.ElementAt(i));
+                    await AddItemAsync(resultServer.ElementAt(i));
                 }
             }
+            await InitializeAsync();
         }
     }
 }

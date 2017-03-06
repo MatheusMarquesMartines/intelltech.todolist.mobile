@@ -15,6 +15,7 @@ C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\asse
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.dll
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\XFormsProvider.dll
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\Java.Interop.dll
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\Mono.Android.dll
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\System.Core.dll
@@ -50,7 +51,12 @@ C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\asse
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\Microsoft.CSharp.dll
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\Mono.CSharp.dll
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\System.ComponentModel.dll
-C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\System.Collections.Concurrent.dll
-C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\System.Runtime.InteropServices.dll
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\System.Net.Requests.dll
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\System.Resources.ResourceManager.dll
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\System.Linq.Queryable.dll
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\System.Collections.Concurrent.dll
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\System.Runtime.Numerics.dll
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\System.Numerics.dll
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\System.Threading.Tasks.Parallel.dll
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\System.Runtime.InteropServices.dll
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\System.Diagnostics.Tools.dll

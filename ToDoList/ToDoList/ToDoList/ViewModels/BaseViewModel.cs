@@ -19,6 +19,13 @@ namespace ToDoList.ViewModels
             get { return isBusy; }
             set { SetProperty(ref isBusy, value); }
         }
+
+        bool isBusySync = false;
+        public bool IsBusySync
+        {
+            get { return isBusySync; }
+            set { SetProperty(ref isBusySync, value); }
+        }
         /// <summary>
         /// Private backing field to hold the title
         /// </summary>

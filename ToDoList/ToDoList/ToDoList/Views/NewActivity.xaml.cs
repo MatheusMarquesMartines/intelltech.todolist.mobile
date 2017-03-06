@@ -16,8 +16,8 @@ namespace ToDoList.Views
             date.MinimumDate = DateTime.Now;
             Activity = new Activity
             {
-                titulo = "",
-                descricao = "",
+                Titulo = "",
+                Descricao = "",
             };
 
             BindingContext = this;
@@ -25,9 +25,11 @@ namespace ToDoList.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            if (!Activity.titulo.Equals("") && !Activity.descricao.Equals(""))
+            if (!Activity.Titulo.Equals("") && !Activity.Descricao.Equals(""))
             {
-                Activity.dataHora = date.Date.ToString().Substring(0,10) + " " + hour.Time.ToString();
+                DateTime dt = Convert.ToDateTime(date.Date.ToString().Substring(0, 10) + " " + hour.Time.ToString());
+                dt.GetDateTimeFormats();
+                Activity.DataHora = dt.ToString("o").Substring(0, 19);
                 await DisplayAlert("Sucesso", "Atividade inserida com sucesso.", "Ok");
                 MessagingCenter.Send(this, "AddItem", Activity);
                 await Navigation.PopToRootAsync();

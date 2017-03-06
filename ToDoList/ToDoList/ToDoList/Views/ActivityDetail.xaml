@@ -4,8 +4,8 @@
              x:Class="ToDoList.Views.ActivityDetail"
              Title="{Binding Title}">
     <StackLayout Spacing="20" Padding="15">
-		<Label HorizontalTextAlignment="Center" Text="{Binding Activity.titulo}" FontSize="Medium"/>
-        <Label HorizontalTextAlignment="Center" VerticalOptions="Center" Text="{Binding Activity.descricao}" FontSize="Small"/>
-        <Label HorizontalTextAlignment="Center" Text="{Binding Activity.dataHora}" FontSize="Small"/>
+		<Label HorizontalTextAlignment="Center" Text="{Binding Activity.Titulo}" FontSize="Medium"/>
+        <Label HorizontalTextAlignment="Center" VerticalOptions="Center" Text="{Binding Activity.Descricao}" FontSize="Small"/>
+        <Label HorizontalTextAlignment="Center" Text="{Binding Activity.DataHora}" FontSize="Small"/>
     </StackLayout>
 </ContentPage>

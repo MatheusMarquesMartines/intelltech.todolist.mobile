@@ -20,9 +20,13 @@ namespace ToDoList.Views {
         private global::Xamarin.Forms.ListView ItemsListView;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label aviso;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(ActivityPage));
             ItemsListView = this.FindByName<global::Xamarin.Forms.ListView>("ItemsListView");
+            aviso = this.FindByName<global::Xamarin.Forms.Label>("aviso");
         }
     }
 }

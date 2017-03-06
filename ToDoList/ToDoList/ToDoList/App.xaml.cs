@@ -24,6 +24,7 @@ namespace ToDoList
                     new NavigationPage(new ActivityPage())
                     {
                         Title = "Activities"
+                       
                     },
                     new NavigationPage(new MailPage())
                     {

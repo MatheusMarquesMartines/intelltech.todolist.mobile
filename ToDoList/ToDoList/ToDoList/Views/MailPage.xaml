@@ -12,6 +12,6 @@
             <Entry x:Name="_email" Keyboard="Email" FontSize="Small" />
             <Label Text="Hour" FontSize="Medium" />
         <TimePicker x:Name="_hour" Format = "HH:mm"/>
-            <Button Text="Save" Clicked="Save_Clicked"/>
+        <Button Text="Save" BackgroundColor="#2196F3" TextColor="White" Clicked="Save_Clicked"/>
     </StackLayout>
 </ContentPage>

@@ -1,11 +1,3 @@
-C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.App.xaml.g.cs
-C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.Views.MailPage.xaml.g.cs
-C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.Views.ActivityDetail.xaml.g.cs
-C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.Views.ActivityPage.xaml.g.cs
-C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.Views.NewActivity.xaml.g.cs
-C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.Views.SyncPage.xaml.g.cs
-C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.dll
-C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.pdb
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\bin\Debug\ToDoList.dll
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\bin\Debug\ToDoList.pdb
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\bin\Debug\Mono.Android.dll
@@ -21,5 +13,14 @@ C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\bin\Debug\Xamarin.Forms.Core.x
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\bin\Debug\Xamarin.Forms.Platform.pdb
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\bin\Debug\Xamarin.Forms.Xaml.pdb
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.App.xaml.g.cs
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.Views.MailPage.xaml.g.cs
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.Views.ActivityDetail.xaml.g.cs
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.Views.ActivityPage.xaml.g.cs
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.Views.NewActivity.xaml.g.cs
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.Views.SyncPage.xaml.g.cs
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.dll
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.pdb
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.csprojResolveAssemblyReference.cache
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\obj\Debug\ToDoList.dll.mdb
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList\bin\Debug\ToDoList.dll.mdb

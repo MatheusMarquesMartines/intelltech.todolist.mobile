@@ -7,9 +7,9 @@
 	<ContentPage.Content>
 		<StackLayout Spacing="20" Padding="15">
 			<Label Text="Title" FontSize="Medium" />
-			<Entry Text="{Binding Activity.titulo}" FontSize="Small" />
-			<Label Text="Content" FontSize="Medium" />
-			<Editor Text="{Binding Activity.descricao }" FontSize="Small" Margin="0" />
+			<Entry Text="{Binding Activity.Titulo}" FontSize="Small" />
+			<Label Text="Description" FontSize="Medium" />
+			<Editor Text="{Binding Activity.Descricao }" FontSize="Small" Margin="0" />
             <Label Text="Date" FontSize="Medium" />
             <DatePicker x:Name="date" Format="dd/MM/yyyy"/>
             <Label Text="Hour" FontSize="Medium" />

@@ -65,5 +65,16 @@ namespace ToDoList.Services
                 await httpClient.PostAsync(BaseUrl+"/sync", content);
             }
         }
+
+        public async void DeleteActivity(Activity activity)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                var data = JsonConvert.SerializeObject(activity);
+                var content = new StringContent(data, Encoding.UTF8, "application/json");
+                await httpClient.DeleteAsync(BaseUrl + "/delete");
+            }
+        }
+
     }
 }

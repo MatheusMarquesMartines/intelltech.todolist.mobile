@@ -6,25 +6,26 @@ namespace ToDoList.Models
     {
 
         string title = string.Empty;
-        public string titulo
+        public string Titulo
         {
             get { return title; }
             set { SetProperty(ref title, value); }
         }
-        string content = string.Empty;
-        public string descricao
+        string description = string.Empty;
+        public string Descricao
         {
-            get { return content; }
-            set { SetProperty(ref content, value); }
+            get { return description; }
+            set { SetProperty(ref description, value); }
         }
 
         string date = string.Empty;
-        public string dataHora
+        public string DataHora
         {
             get { return date; }
             set { SetProperty(ref date, value); }
         }
 
+        public bool Synchronized { get; set; }
        
        // public int posSituation { get; set; }
 
@@ -42,7 +43,7 @@ namespace ToDoList.Models
 
         public override string ToString()
         {
-            return string.Format("{0} {1} {2} {3}", Id, titulo, descricao, dataHora);
+            return string.Format("{0} {1} {2} {3} {4}", Id, Titulo, Descricao, DataHora, Synchronized);
         }
     }
 }

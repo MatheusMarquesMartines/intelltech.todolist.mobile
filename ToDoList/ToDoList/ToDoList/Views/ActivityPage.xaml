@@ -5,40 +5,48 @@
               Title="{Binding Title}"
              x:Name="BrowseItemsPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem 
-            Text="Add Activity" Icon="ic_add.png" Clicked="AddItem_Clicked">
+        <ToolbarItem Order="Primary" Clicked="AddItem_Clicked">
+            <ToolbarItem.Icon>
+            <OnPlatform x:TypeArguments="FileImageSource">
+                    <OnPlatform.Android>add.png</OnPlatform.Android>
+            </OnPlatform>
+            </ToolbarItem.Icon>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="ItemsListView"
+            <ListView
+                x:Name="ItemsListView"
 				ItemsSource="{Binding Activities}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"
                 RefreshCommand="{Binding LoadItemsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                 CachingStrategy="RecycleElement"
 				ItemTapped="OnItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.ContextActions>
-                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
+                                <MenuItem  Clicked="OnDelete" CommandParameter="{Binding .}"  Text="Delete" IsDestructive="True" />
                             </ViewCell.ContextActions>
                             <StackLayout Padding="10">
-                                <Label Text="{Binding titulo}"
+                                <Label Text="{Binding Titulo}"
                                        LineBreakMode="NoWrap"
                                        Style="{DynamicResource ListItemTextStyle}"
                                        FontSize="16"/>
-                                <Label Text="{Binding dataHora}"
+                                <Label Text="{Binding DataHora}"
                                        LineBreakMode="NoWrap"
                                        Style="{DynamicResource ListItemDetailTextStyle}"
-                                       FontSize="13"/>      
-                                <Image Source="{Binding image}" />
+                                       FontSize="13"
+                                       />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
+            <Label x:Name="aviso" HorizontalTextAlignment="Center" IsVisible="False" Text="Nenhuma Atividade cadastrada!"/>
+         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
