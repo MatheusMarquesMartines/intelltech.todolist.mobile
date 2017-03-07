@@ -16,6 +16,7 @@ namespace ToDoList.ViewModels
         public ObservableRangeCollection<Activity> Activities { get; set; }
         public Command LoadItemsCommand { get; set; }
         private RestClient client;
+
         public ActivityViewModel()
         {
             Title = "ToDoList";
@@ -29,6 +30,7 @@ namespace ToDoList.ViewModels
                 using (var data = new AccessDB())
                 {
                     _activity.Synchronized = false;
+                    _activity.Concluida = false;
                     data.InsertActivity(_activity);
                 }
 
@@ -43,7 +45,7 @@ namespace ToDoList.ViewModels
             {
                 data.DeleteActivity((Activity)commandParameter);
             }
-             client.DeleteActivity((Activity)commandParameter);
+            client.DeleteActivity((Activity)commandParameter);
             Activities.Remove((Activity)commandParameter);
         }
 

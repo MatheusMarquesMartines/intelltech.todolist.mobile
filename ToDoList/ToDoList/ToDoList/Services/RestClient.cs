@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -25,8 +24,6 @@ namespace ToDoList.Services
             var result = Enumerable.Empty<Activity>();
             try
             {
-                
-
                 using (var httpClient = new HttpClient())
                 {
                     httpClient.DefaultRequestHeaders.Accept.Clear();
@@ -73,6 +70,27 @@ namespace ToDoList.Services
                 var data = JsonConvert.SerializeObject(activity);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
                 await httpClient.DeleteAsync(BaseUrl + "/delete");
+            }
+        }
+
+        public async void UpdateEmail(Email email)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                email.Id = 1;
+                var data = JsonConvert.SerializeObject(email);
+                var content = new StringContent(data, Encoding.UTF8, "application/json");
+                await httpClient.PutAsync("http://192.168.10.230:62264/api/email/1", content);
+            }
+        }
+
+        public async void UpdateActivity(Activity activity)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                var data = JsonConvert.SerializeObject(activity);
+                var content = new StringContent(data, Encoding.UTF8, "application/json");
+                await httpClient.PutAsync("http://192.168.10.230:62264/api/atividade/"+activity.Id, content);
             }
         }
 

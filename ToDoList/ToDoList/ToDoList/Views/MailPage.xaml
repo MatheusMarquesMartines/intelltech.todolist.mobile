@@ -7,11 +7,19 @@
     <ContentPage.BindingContext>
         <vm:MailViewModel />
     </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Clicked="Save_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <OnPlatform.Android>save.png</OnPlatform.Android>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <StackLayout Spacing="20" Padding="15" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
             <Label Text="Email" FontSize="Medium" />
-            <Entry x:Name="_email" Keyboard="Email" FontSize="Small" />
+            <Entry x:Name="_email" Keyboard="Email" FontSize="Medium" />
             <Label Text="Hour" FontSize="Medium" />
         <TimePicker x:Name="_hour" Format = "HH:mm"/>
-        <Button Text="Save" BackgroundColor="#2196F3" TextColor="White" Clicked="Save_Clicked"/>
     </StackLayout>
 </ContentPage>

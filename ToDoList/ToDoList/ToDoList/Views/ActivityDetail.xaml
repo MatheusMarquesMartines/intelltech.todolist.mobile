@@ -3,9 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ToDoList.Views.ActivityDetail"
              Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Clicked="UpdateItem_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <OnPlatform.Android>save.png</OnPlatform.Android>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <StackLayout Spacing="20" Padding="15">
-		<Label HorizontalTextAlignment="Center" Text="{Binding Activity.Titulo}" FontSize="Medium"/>
-        <Label HorizontalTextAlignment="Center" VerticalOptions="Center" Text="{Binding Activity.Descricao}" FontSize="Small"/>
+		<Label HorizontalTextAlignment="Center" Text="{Binding Activity.Titulo}" FontSize="Large"/>
+        <Label HorizontalTextAlignment="Center" VerticalOptions="Center" Text="{Binding Activity.Descricao}" FontSize="Medium"/>
         <Label HorizontalTextAlignment="Center" Text="{Binding Activity.DataHora}" FontSize="Small"/>
+        <Label HorizontalTextAlignment="Center" Text="Situação: " x:Name="_status" FontSize="Small"/>
+        <Switch x:Name="_switch" IsToggled="{Binding Activity.Concluida}"   HorizontalOptions="Center" />
+        
     </StackLayout>
 </ContentPage>

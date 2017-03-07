@@ -4,7 +4,7 @@
   <uses-sdk android:minSdkVersion="15" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-  <application android:label="@string/app_name" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
+  <application android:label="@string/app_name" android:icon="@drawable/todolist" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
     <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:theme="@style/MyTheme" android:name="md5807d280f1dca5e105bf11569bccadfb6.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

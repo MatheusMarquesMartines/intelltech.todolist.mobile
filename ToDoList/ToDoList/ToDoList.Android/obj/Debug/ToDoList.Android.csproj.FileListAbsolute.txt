@@ -51,6 +51,7 @@ C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\res\drawable
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\R.cs.flag
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\uploadflags.txt
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\bin\Debug\ToDoList.Android.dll.mdb
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\bin\Debug\ToDoList.dll.mdb
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\bin\Debug\Java.Interop.dll.mdb
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\bin\Debug\Microsoft.CSharp.dll.mdb
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\bin\Debug\Mono.Android.dll.mdb
@@ -66,7 +67,6 @@ C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\bin\Debug\System.Runti
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\bin\Debug\System.ServiceModel.Internals.dll.mdb
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\bin\Debug\System.Xml.dll.mdb
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\bin\Debug\System.Xml.Linq.dll.mdb
-C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\bin\Debug\ToDoList.dll.mdb
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\FormsViewGroup.dll.mdb
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\Java.Interop.dll.mdb
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\Microsoft.CSharp.dll.mdb
@@ -88,5 +88,7 @@ C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\asse
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\res\drawable\save.png
+C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\res\drawable\todolist.png
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\obj\Debug\ToDoList.Android.dll.mdb
 C:\Users\mathe\Desktop\ToDoList\ToDoList\ToDoList.Android\bin\Debug\ToDoList.Android.dll.mdb

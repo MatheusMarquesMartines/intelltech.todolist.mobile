@@ -2,14 +2,15 @@
 using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
-using ToDoList.ViewModels;
+using ToDoList.Services;
+using ToDoList.Models;
 using Xamarin.Forms;
 
 namespace ToDoList.Views
 {
     public partial class MailPage : ContentPage
     {
-
+        RestClient _client;
 
         public MailPage()
         {
@@ -32,6 +33,8 @@ namespace ToDoList.Views
 
          public void Save_Clicked(object sender, EventArgs e)
         {
+            Email email = new Email();
+            _client = new RestClient();
             Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
             if (!_email.Text.Trim().Equals("") && !_hour.Time.ToString().Trim().Equals(""))
             {
@@ -39,6 +42,10 @@ namespace ToDoList.Views
                 {
                     Application.Current.Properties["Hour"] = _hour.Time.ToString().Trim();
                     Application.Current.Properties["Email"] = _email.Text.Trim();
+                    email.StrEmail = _email.Text.Trim();
+                    email.DataHora = _hour.Time.ToString().Trim();
+
+                    _client.UpdateEmail(email);
                     DisplayAlert("Sucesso", "Dados salvos com sucesso", "Ok");
                 }
                 else

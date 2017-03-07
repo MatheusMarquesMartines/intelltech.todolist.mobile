@@ -9,6 +9,9 @@ namespace ToDoList.ViewModels
     {
         public Activity Activity { get; set; }
         ActivityViewModel ivm = new ActivityViewModel();
+        private AccessDB adb;
+        private RestClient client;
+
         public ActivityDetailViewModel(Activity activity = null)
         {
             Title = activity.Titulo;
@@ -20,6 +23,15 @@ namespace ToDoList.ViewModels
         {
             get { return quantity; }
             set { SetProperty(ref quantity, value); }
+        }
+
+        public void UpdateActivity(Activity activity)
+        {
+            adb = new AccessDB();
+            adb.UpdateActivity(activity);
+
+            client = new RestClient();
+            client.UpdateActivity(activity);
         }
     }
 }

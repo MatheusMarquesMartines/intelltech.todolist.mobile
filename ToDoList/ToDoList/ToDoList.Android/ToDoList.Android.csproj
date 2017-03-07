@@ -176,6 +176,8 @@
     <Content Include="Resources\drawable-xxxhdpi\ic_add.png" />
     <AndroidResource Include="Resources\drawable\add.png" />
     <AndroidResource Include="Resources\drawable\sync.png" />
+    <AndroidResource Include="Resources\drawable\save.png" />
+    <AndroidResource Include="Resources\drawable\todolist.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

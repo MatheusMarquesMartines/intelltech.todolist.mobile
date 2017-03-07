@@ -43,6 +43,7 @@
     <Compile Include="Helpers\ObservableRangeCollection.cs" />
     <Compile Include="Models\BaseDataObject.cs" />
     <Compile Include="Models\Activity.cs" />
+    <Compile Include="Models\Email.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AccessDB.cs" />
     <Compile Include="Services\IConfig.cs" />

@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-
 using ToDoList.Models;
-
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(ToDoList.Services.DataStore))]
@@ -15,12 +11,13 @@ namespace ToDoList.Services
     public class DataStore : IDataStore<Activity>
     {
         bool isInitialized;
-        bool verifica;
         List<Activity> SortedList;
         List<Activity> activities;
         List<Activity> activities2;
+
         private AccessDB db;
         private RestClient _client;
+
         public async Task<bool> AddItemAsync(Activity a)
         {
             await InitializeAsync();
@@ -71,7 +68,6 @@ namespace ToDoList.Services
             return Task.FromResult(true);
         }
 
-
         public Task<bool> SyncAsync()
         {
             return Task.FromResult(true);
@@ -87,7 +83,6 @@ namespace ToDoList.Services
                 return;
 
             activities = new List<Activity>();
-            var resultServer = await _client.GetActivities();
             activities.Clear();
 
             var resultLocal = db.GetActivities();
@@ -96,29 +91,6 @@ namespace ToDoList.Services
                DateTime dt = Convert.ToDateTime(item2.DataHora);
                item2.DataHora = dt.ToString("G");
                 activities.Add(item2);
-            }
-
-            
-            foreach (var item in resultServer)
-            {
-                verifica = false;
-
-                for (int i=0; i< resultLocal.Count; i++)
-                {
-                    DateTime dt = Convert.ToDateTime(item.DataHora);
-                    item.DataHora = dt.ToString("G");
-                    if (resultLocal.ElementAt(i).Titulo.Equals(item.Titulo) && resultLocal.ElementAt(i).DataHora.Substring(0, 19).Equals(item.DataHora.Substring(0,19)))
-                    {
-                        verifica = true;
-                    }
-                }
-
-                if (verifica == false)
-                {
-                  
-                   activities.Add(item);
-                }
-                
             }
 
             SortedList = activities.OrderBy(o => o.DataHora).ToList();

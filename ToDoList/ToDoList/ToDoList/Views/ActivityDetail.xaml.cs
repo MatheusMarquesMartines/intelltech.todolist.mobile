@@ -23,6 +23,22 @@ namespace ToDoList.Views
             InitializeComponent();
 
             BindingContext = this.viewModel = viewModel;
+
+            if (_switch.IsToggled == true)
+            {
+                _status.Text = "Situação: Concluído";
+            }
+            else
+            {
+                _status.Text = "Situação: Não Concluído";
+            }
+        }
+
+         void UpdateItem_Clicked(object sender, EventArgs e)
+        {
+            viewModel.Activity.Concluida = _switch.IsToggled;
+            viewModel.UpdateActivity(viewModel.Activity);
+            Navigation.PopAsync();
         }
     }
 }

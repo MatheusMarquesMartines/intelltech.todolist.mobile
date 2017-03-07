@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ToDoList.Views.NewActivity"
 		Title="New Activity">
-	<ContentPage.ToolbarItems>
-		<ToolbarItem Text="Save" Clicked="Save_Clicked" />
-	</ContentPage.ToolbarItems>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Text="Save" Clicked="Save_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <OnPlatform.Android>save.png</OnPlatform.Android>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
 	<ContentPage.Content>
 		<StackLayout Spacing="20" Padding="15">
 			<Label Text="Title" FontSize="Medium" />
-			<Entry Text="{Binding Activity.Titulo}" FontSize="Small" />
+			<Entry Text="{Binding Activity.Titulo}" FontSize="Medium" />
 			<Label Text="Description" FontSize="Medium" />
-			<Editor Text="{Binding Activity.Descricao }" FontSize="Small" Margin="0" />
+			<Editor Text="{Binding Activity.Descricao }" FontSize="Medium" Margin="0" />
             <Label Text="Date" FontSize="Medium" />
             <DatePicker x:Name="date" Format="dd/MM/yyyy"/>
             <Label Text="Hour" FontSize="Medium" />

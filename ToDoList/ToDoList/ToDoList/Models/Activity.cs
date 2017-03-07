@@ -1,7 +1,6 @@
-﻿using SQLite.Net.Attributes;
-
-namespace ToDoList.Models
+﻿namespace ToDoList.Models
 {
+
     public class Activity : BaseDataObject
     {
 
@@ -26,24 +25,12 @@ namespace ToDoList.Models
         }
 
         public bool Synchronized { get; set; }
+
+        public bool Concluida { get; set; }
        
-       // public int posSituation { get; set; }
-
-        //private string[] situation = { "Não iniciada", "Em andamento", "Concluída" };
-
-  //      public string getSituation()
-    //    {
-      //      return this.situation[posSituation];
-        //}
-
-        //public void setSituation(int posSituation)
-        //{
-        //    this.posSituation = posSituation;
-        //}
-
         public override string ToString()
         {
-            return string.Format("{0} {1} {2} {3} {4}", Id, Titulo, Descricao, DataHora, Synchronized);
+            return string.Format("{0} {1} {2} {3} {4} {5}", Id, Titulo, Descricao, DataHora, Synchronized, Concluida);
         }
     }
 }

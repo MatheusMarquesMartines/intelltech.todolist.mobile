@@ -17,8 +17,16 @@ namespace ToDoList.Views {
     public partial class ActivityDetail : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label _status;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Switch _switch;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(ActivityDetail));
+            _status = this.FindByName<global::Xamarin.Forms.Label>("_status");
+            _switch = this.FindByName<global::Xamarin.Forms.Switch>("_switch");
         }
     }
 }
