@@ -13,7 +13,7 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <StackLayout Spacing="20" Padding="15">
-		<Label HorizontalTextAlignment="Center" Text="{Binding Activity.Titulo}" FontSize="Large"/>
+        <Label HorizontalTextAlignment="Center" Text="{Binding Activity.Titulo}" FontSize="Large"/>
         <Label HorizontalTextAlignment="Center" VerticalOptions="Center" Text="{Binding Activity.Descricao}" FontSize="Medium"/>
         <Label HorizontalTextAlignment="Center" Text="{Binding Activity.DataHora}" FontSize="Small"/>
         <Label HorizontalTextAlignment="Center" Text="Situação: " x:Name="_status" FontSize="Small"/>

@@ -23,20 +23,20 @@ namespace ToDoList.Views
             BindingContext = this;
         }
 
-        async void Save_Clicked(object sender, EventArgs e)
+        void Save_Clicked(object sender, EventArgs e)
         {
             if (!Activity.Titulo.Equals("") && !Activity.Descricao.Equals(""))
             {
                 DateTime dt = Convert.ToDateTime(date.Date.ToString().Substring(0, 10) + " " + hour.Time.ToString());
                 dt.GetDateTimeFormats();
                 Activity.DataHora = dt.ToString("o").Substring(0, 19);
-                await DisplayAlert("Sucesso", "Atividade inserida com sucesso.", "Ok");
+                DisplayAlert("Sucesso", "Atividade inserida com sucesso.", "Ok");
                 MessagingCenter.Send(this, "AddItem", Activity);
-                await Navigation.PopToRootAsync();
+                Navigation.PopToRootAsync();
             }
             else
             {
-                await DisplayAlert("Erro", "Dados inválidos ou em branco, por favor verifique.", "Ok");
+                DisplayAlert("Erro", "Dados inválidos ou em branco, por favor verifique.", "Ok");
 
             }
         }

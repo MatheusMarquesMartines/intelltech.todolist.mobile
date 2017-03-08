@@ -1,5 +1,4 @@
-﻿using SQLite.Net.Attributes;
-using System;
+﻿using System;
 using ToDoList.Helpers;
 
 namespace ToDoList.Models
@@ -8,14 +7,13 @@ namespace ToDoList.Models
     {
         public BaseDataObject()
         {
-            Id = Guid.NewGuid().ToString();
+            GUID = Guid.NewGuid().ToString();
         }
 
         /// <summary>
-        /// Id for item
+        /// GUID for item
         /// </summary>
-        [PrimaryKey]
-        public string Id { get; set; }
+        public string GUID { get; set; }
 
         /// <summary>
         /// Azure created at time stamp

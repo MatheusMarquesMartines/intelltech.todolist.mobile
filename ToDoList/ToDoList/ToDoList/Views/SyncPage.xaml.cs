@@ -37,7 +37,6 @@ namespace ToDoList.Views
         public async void Sync_Clicked(object sender, EventArgs e)
         {
             await viewModel.Sync();
-
             validate();
         }
 

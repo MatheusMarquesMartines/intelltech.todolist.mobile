@@ -26,7 +26,6 @@ namespace ToDoList.Views
             var mi = ((MenuItem)sender);
             viewModel.DeleteActivity(mi.CommandParameter);
             validate();
-
             //DisplayAlert("Delete Context Action", mi.CommandParameter + " delete context action", "OK");
         }
 
@@ -50,7 +49,7 @@ namespace ToDoList.Views
             await Navigation.PushAsync(new NewActivity());
         }
 
-       protected override void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
 

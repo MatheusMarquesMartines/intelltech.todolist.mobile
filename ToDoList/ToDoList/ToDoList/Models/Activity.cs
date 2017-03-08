@@ -1,8 +1,12 @@
-﻿namespace ToDoList.Models
+﻿using SQLite.Net.Attributes;
+
+namespace ToDoList.Models
 {
 
     public class Activity : BaseDataObject
     {
+        [PrimaryKey] [AutoIncrement]
+        public long Id { get; set; }
 
         string title = string.Empty;
         public string Titulo
@@ -27,10 +31,12 @@
         public bool Synchronized { get; set; }
 
         public bool Concluida { get; set; }
-       
+
+        public long IdFake { get; set; }
+
         public override string ToString()
         {
-            return string.Format("{0} {1} {2} {3} {4} {5}", Id, Titulo, Descricao, DataHora, Synchronized, Concluida);
+            return string.Format("{0} {1} {2} {3} {4} {5}", Id, Titulo, Descricao, DataHora, Concluida, GUID);
         }
     }
 }

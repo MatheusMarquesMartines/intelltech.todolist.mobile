@@ -69,7 +69,8 @@ namespace ToDoList.Services
             {
                 var data = JsonConvert.SerializeObject(activity);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
-                await httpClient.DeleteAsync(BaseUrl + "/delete");
+                //var titulo = activity.Titulo.Replace(" ", "%20");
+                await httpClient.DeleteAsync(BaseUrl +"/"+activity.IdFake);
             }
         }
 
@@ -88,9 +89,10 @@ namespace ToDoList.Services
         {
             using (var httpClient = new HttpClient())
             {
-                var data = JsonConvert.SerializeObject(activity);
+                AuxClass aux = new AuxClass { Id = activity.IdFake, Titulo = activity.Titulo, Descricao = activity.Descricao, DataHora = activity.DataHora, Concluida = activity.Concluida, GUID = activity.GUID};
+                var data = JsonConvert.SerializeObject(aux);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
-                await httpClient.PutAsync("http://192.168.10.230:62264/api/atividade/"+activity.Id, content);
+                await httpClient.PutAsync("http://192.168.10.230:62264/api/atividade/"+activity.IdFake, content);
             }
         }
 

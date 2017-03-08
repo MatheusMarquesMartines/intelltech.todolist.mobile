@@ -26,15 +26,16 @@ namespace ToDoList.ViewModels
             MessagingCenter.Subscribe<NewActivity, Activity>(this, "AddItem", async (obj, activity) =>
             {
                 var _activity = activity as Activity;
-                Activities.Add(_activity);
                 using (var data = new AccessDB())
                 {
                     _activity.Synchronized = false;
                     _activity.Concluida = false;
+                    _activity.IdFake = 0;
                     data.InsertActivity(_activity);
                 }
 
                 await DataStore.AddItemAsync(_activity);
+                
             });
         }
 
@@ -45,8 +46,17 @@ namespace ToDoList.ViewModels
             {
                 data.DeleteActivity((Activity)commandParameter);
             }
-            client.DeleteActivity((Activity)commandParameter);
+
+            Activity a = (Activity)commandParameter;
+            if (a.Synchronized == true) {
+                client.DeleteActivity(a);
+            }
             Activities.Remove((Activity)commandParameter);
+        }
+
+        internal void Refresh()
+        {
+            DataStore.InitializeAsync();
         }
 
         public async Task ExecuteLoadItemsCommand()

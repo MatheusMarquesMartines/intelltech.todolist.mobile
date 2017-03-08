@@ -36,7 +36,7 @@ namespace ToDoList.Services
         {
             connectionSQLite.DeleteAll<Activity>();
         }
-        public Activity GetActivity(String id)
+        public Activity GetActivity(long id)
         {
             try
             {

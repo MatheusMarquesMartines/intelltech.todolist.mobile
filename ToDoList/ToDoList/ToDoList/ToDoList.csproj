@@ -41,6 +41,7 @@
     <Compile Include="Helpers\MessengingCenterAlert.cs" />
     <Compile Include="Helpers\ObservableObject.cs" />
     <Compile Include="Helpers\ObservableRangeCollection.cs" />
+    <Compile Include="Models\AuxClass.cs" />
     <Compile Include="Models\BaseDataObject.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Email.cs" />

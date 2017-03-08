@@ -30,7 +30,7 @@ namespace ToDoList
                     {
                         Title = "Email"
                     },
-                     new NavigationPage(new SyncPage())
+                    new NavigationPage(new SyncPage())
                     {
                         Title = "Sync"
                     },

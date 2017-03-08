@@ -57,6 +57,7 @@ namespace ToDoList.ViewModels
                 await DataStore.Synchronize();
                 var activities = await DataStore.GetItemsAsyncCompare(true);
                 ActivitiesSync.ReplaceRange(activities);
+                await DataStore.InitializeAsync();
             }
             catch (Exception ex)
             {

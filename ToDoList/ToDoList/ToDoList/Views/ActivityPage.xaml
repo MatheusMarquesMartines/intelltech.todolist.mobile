@@ -7,9 +7,9 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary" Clicked="AddItem_Clicked">
             <ToolbarItem.Icon>
-            <OnPlatform x:TypeArguments="FileImageSource">
+                <OnPlatform x:TypeArguments="FileImageSource">
                     <OnPlatform.Android>add.png</OnPlatform.Android>
-            </OnPlatform>
+                </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>
     </ContentPage.ToolbarItems>

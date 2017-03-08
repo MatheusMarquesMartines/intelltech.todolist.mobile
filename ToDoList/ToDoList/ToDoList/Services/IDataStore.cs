@@ -8,7 +8,7 @@ namespace ToDoList.Services
         Task<bool> AddItemAsync(T activity);
         Task<bool> UpdateItemAsync(T activity);
         Task<bool> DeleteItemAsync(T activity);
-        Task<T> GetItemAsync(string id);
+        Task<T> GetItemAsync(long id);
         Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
         Task<IEnumerable<T>> GetItemsAsyncCompare(bool forceRefresh = false);
 
